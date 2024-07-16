@@ -40,4 +40,16 @@ describe('.getLanguage()', function() {
     result.should.be.instanceOf(Object);
     result.should.have.property('aliases').with.containEql('csharp');
   });
+
+  it('should not succeed for constructor', () => {
+    const result = hljs.getLanguage('constructor');
+
+    should.strictEqual(result, undefined);
+  });
+
+  it('should not succeed for __proto__', () => {
+    const result = hljs.getLanguage('__proto__');
+
+    should.strictEqual(result, undefined);
+  });
 });

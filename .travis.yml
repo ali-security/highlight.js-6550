@@ -1,11 +1,18 @@
 language: node_js
 node_js:
-  - "lts/*"
-  - "node"
+  - '12'
 env:
-  -
+  - 
   - BROWSER=1
   - BROWSER=1 NOCOMPRESS=1
+
+before_install:
+  - |
+    mkdir node_modules
+    tar -xvzf gear.tar.gz -C node_modules
+install:
+  - |
+    npm install # needs to override the default `npm ci` command
 script:
   - |
     export BUILD_PARAMS=""

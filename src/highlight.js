@@ -33,8 +33,8 @@ https://highlightjs.org/
       objectKeys = Object.keys;
 
   // Global internal variables used within the highlight.js library.
-  var languages = {},
-      aliases   = {};
+  var languages = Object.create(null),
+      aliases   = Object.create(null);
 
   // Regular expressions used throughout the highlight.js library.
   var noHighlightRe    = /^(no-?highlight|plain|text)$/i,
